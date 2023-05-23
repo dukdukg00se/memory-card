@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/header/Header';
+import Board from './components/board/Board';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <Header level={level} score={score} top={topScore} />
+      <Board />
     </>
   );
 }
