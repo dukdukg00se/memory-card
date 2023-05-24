@@ -1,0 +1,19 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  padding: 2%;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  border: solid 5px blue;
+  border-radius: 5px;
+}
+
+.card > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
