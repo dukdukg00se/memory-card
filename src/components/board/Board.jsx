@@ -1,10 +1,23 @@
 import './Board.css';
 
-function Board() {
+function Board({ cards, onClick }) {
   return (
     <main>
-      <h2>Board</h2>
-      <div></div>
+      <div className="card-container">
+        {cards.map((card) => {
+          return (
+            <figure
+              key={card.id}
+              id={card.id}
+              onClick={onClick}
+              className="card"
+            >
+              <img src={card.src} />
+              <figcaption></figcaption>
+            </figure>
+          );
+        })}
+      </div>
     </main>
   );
 }
