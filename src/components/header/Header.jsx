@@ -1,6 +1,6 @@
 import './Header.css';
 
-function Header({ level, score, top }) {
+function Header({ score, topScore }) {
   return (
     <header>
       <h1>Space Cards Memory Game</h1>
@@ -10,9 +10,8 @@ function Header({ level, score, top }) {
       </p>
       <div>
         <ul>
-          <li>Level: {level}</li>
           <li>Current Score: {score}</li>
-          <li>Top Score: {top}</li>
+          <li>Top Score: {topScore}</li>
         </ul>
       </div>
     </header>
