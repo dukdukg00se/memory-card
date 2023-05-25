@@ -4,70 +4,46 @@ import Board from './components/board/Board';
 import planets from './assets/cards-index';
 import './App.css';
 
+// Util fn
+function getShuffledArray(array) {
+  let newArr = [...array];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+}
+
 function App() {
-  const [level, setLevel] = useState(1);
   const [score, setScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
-  const [cards, setCards] = useState([]);
-  const [remembered, setRemembered] = useState([]);
-
-  // useEffect(() => {
-  //   const numbrOfCards = level * 3;
-  //   const randomCards = [];
-
-  //   for (let i = 0; i < numbrOfCards; i++) {
-  //     while (randomCards.length <= i) {
-  //       const index = Math.floor(Math.random() * planets.length);
-
-  //       if (randomCards.includes(planets[index]) === false) {
-  //         randomCards.push(planets[index]);
-  //       }
-  //     }
-  //   }
-
-  //   setCards(randomCards);
-  // }, []);
-
-  const displayCards = () => {
-    const numbrOfCards = level * 3;
-    const randomCards = [];
-
-    for (let i = 0; i < numbrOfCards; i++) {
-      while (randomCards.length <= i) {
-        const index = Math.floor(Math.random() * planets.length);
-
-        if (randomCards.includes(planets[index]) === false) {
-          randomCards.push(planets[index]);
-        }
-      }
-    }
-
-    setCards(randomCards);
-  };
-
-  useEffect(displayCards, []);
+  const [cards, setCards] = useState(planets);
+  const [savedCards, setSavedCards] = useState([]);
 
   const handleGamePlay = (e) => {
-    // console.log(e.target.closest('.card'));
-    // console.log(cards);
-
+    let selectedCard;
     const clickedElem = e.target.closest('.card');
     cards.forEach((cardObj) => {
       if (cardObj.id === clickedElem.id) {
-        let selectedCard = cardObj;
-        if (remembered.includes(selectedCard)) {
-          console.log('over');
-          return;
-        } else {
-          setRemembered([...remembered, selectedCard]);
-        }
+        selectedCard = cardObj;
       }
     });
+
+    if (savedCards.includes(selectedCard)) {
+      if (score > topScore) setTopScore(score);
+      setScore(0);
+      setSavedCards([]);
+    } else {
+      setSavedCards([...savedCards, selectedCard]);
+      setScore(score + 1);
+    }
+
+    setCards(getShuffledArray(planets));
   };
 
   return (
     <>
-      <Header level={level} score={score} top={topScore} />
+      <Header score={score} topScore={topScore} />
       <Board cards={cards} onClick={handleGamePlay} />
     </>
   );
