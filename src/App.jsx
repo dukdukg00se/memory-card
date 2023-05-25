@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './components/header/Header';
 import Board from './components/board/Board';
-import planets from './assets/cards-index';
+import planets from './utils/cards-index';
+import getShuffledArray from './utils/shuffle-array';
 import './App.css';
-
-// Util fn
-function getShuffledArray(array) {
-  let newArr = [...array];
-  for (let i = newArr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-  }
-  return newArr;
-}
 
 function App() {
   const [score, setScore] = useState(0);
