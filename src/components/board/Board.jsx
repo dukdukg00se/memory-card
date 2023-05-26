@@ -1,6 +1,11 @@
 import './Board.css';
 
 function Board({ cards, onClick }) {
+  const getCaption = (str) => {
+    const regex = /(?<=\.\/cards\/).*?(?=\.(jpg|webp|png))/g;
+    return str.match(regex).join('');
+  };
+
   return (
     <main>
       <div className="card-container">
@@ -13,7 +18,7 @@ function Board({ cards, onClick }) {
               className="card"
             >
               <img src={card.src} />
-              <figcaption></figcaption>
+              <figcaption>{getCaption(card.src)}</figcaption>
             </figure>
           );
         })}
