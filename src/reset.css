@@ -127,18 +127,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* End reset styles */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.4rem;
-  font-family: sans-serif;
-}
