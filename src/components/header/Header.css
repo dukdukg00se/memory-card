@@ -1,7 +1,71 @@
 header {
-  border: solid 2px black;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+header > div:last-of-type {
+  align-self: center;
+  font-size: 2.2rem;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+header h2 {
+  font-size: 1.7rem;
+}
+
+li {
+  margin: 0.5rem;
+}
+
+.info {
+  font-weight: 600;
+  color: #4444ee;
+  margin: 1rem;
+}
+
+@media (max-width: 430px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header > div:last-of-type {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 431px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header > div:last-of-type {
+    font-size: 3.8vmin;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 5.9vmin;
+  }
+
+  header h2 {
+    font-size: 3.3vmin;
+  }
 }
