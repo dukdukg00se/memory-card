@@ -3,6 +3,9 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
+
+  max-width: 200rem;
+  margin: auto;
 }
 
 header > div:last-of-type {
@@ -50,22 +53,23 @@ li {
   }
 }
 
-@media (min-width: 431px) {
+/* @media (max-width: 675px) { */
+@media (min-width: 431px) and (max-width: 830px) {
   header {
     flex-direction: column;
     text-align: center;
   }
 
   header > div:last-of-type {
-    font-size: 3.8vmin;
+    font-size: 1.7rem;
     margin-top: 1rem;
   }
 
   h1 {
-    font-size: 5.9vmin;
+    font-size: 3rem;
   }
 
   header h2 {
-    font-size: 3.3vmin;
+    font-size: 1.5rem;
   }
 }
