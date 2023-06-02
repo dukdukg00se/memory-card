@@ -4,7 +4,7 @@
 
 A card game testing your memory. Accumulate points by clicking on a card. But don't click a card more than once! See if you can reach 20 points!
 
-[Live Demo]()
+[Live Demo](https://dukdukg00se.github.io/memory-card/)
 
 <img src="./src/assets/app-screenshot.png" width="55%">
 
