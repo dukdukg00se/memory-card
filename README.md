@@ -6,7 +6,7 @@ A card game testing your memory. Accumulate points by clicking on a card. But do
 
 [Live Demo]()
 
-<img src="./src/assets/app-screenshot.png" height="30%">
+<img src="./src/assets/app-screenshot.png" width="55%">
 
 ## Learning Objectives
 
@@ -22,10 +22,10 @@ This project was done as part of [The Odin Project](https://www.theodinproject.c
 
 ## Future Improvements
 
-- Add levels to the game, with higher levels corresponding to an increase in the card deck size
-- Add loading spinner
-- Add favicon to page
+- Add levels to the game, with higher levels corresponding to an increase in deck size
+- Add a loading spinner
+- Add a favicon to page
 
 ## Credits
 
-- Design inspired by and assets from [TheOnlyHamster](https://github.com/Theonlyhamstertoh/planet-cards). All logic and code is original.
+- Design inspired by and card images from [TheOnlyHamster](https://github.com/Theonlyhamstertoh/planet-cards). All logic and code is original.
